@@ -10,9 +10,9 @@ app.config['MONGO_URI'] = 'mongodb://localhost:27017/chat-api'
 mongo = PyMongo(app)
 
 ### Damos la bienvenida a la API
-@app.route("/", methods=['POST'])
+@app.route("/")
 def index():
-    return {"Welcome to the API_project"}
+    return "Welcome to the API_project"
 
 
 ### Creamos usuario
@@ -134,6 +134,7 @@ def update_chat(_id):
         return response
     else:
       return not_found()
+
 
 ### Cuando ocurra un error 404, lo manejaremos con esta función
 @app.errorhandler(404)
